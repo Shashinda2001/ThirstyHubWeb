@@ -1,4 +1,4 @@
-namespace ThirstyHubWeb.Models
+namespace ThirstyHubWeb.Data.Models
 {
     public class ErrorViewModel
     {

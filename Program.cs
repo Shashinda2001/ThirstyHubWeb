@@ -1,7 +1,14 @@
+using ThirstyHubWeb.Data.Interfaces;
+using ThirstyHubWeb.Data.Mocks;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<ICategoryRepository,MockCategoryRepository>();
+builder.Services.AddTransient<IDrinkRepository, MockDrinkRepository>();
+
 
 var app = builder.Build();
 

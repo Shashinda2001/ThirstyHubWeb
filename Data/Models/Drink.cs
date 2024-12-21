@@ -1,8 +1,8 @@
-﻿namespace ThirstyHubWeb.Models
+﻿namespace ThirstyHubWeb.Data.Models
 {
     public class Drink
     {
-       public int DrinkId { get; set; }
+        public int DrinkId { get; set; }
         public string Name { get; set; }
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
@@ -12,11 +12,13 @@
 
         public string ImageThumbnailUrl { get; set; }
 
-        public int InStock { get; set; }
+        public bool InStock { get; set; }
+
+        public bool IsPreferredDrink { get; set; }
 
         public int CategoryId { get; set; }
 
-       // public virtual Category Category { get; set; }
+        public virtual Category Category { get; set; }
 
 
     }

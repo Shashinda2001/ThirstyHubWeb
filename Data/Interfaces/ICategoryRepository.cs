@@ -1,6 +1,6 @@
-﻿using ThirstyHubWeb.Models;
+﻿using ThirstyHubWeb.Data.Models;
 
-namespace ThirstyHubWeb.Interfaces
+namespace ThirstyHubWeb.Data.Interfaces
 {
     public interface ICategoryRepository
     {

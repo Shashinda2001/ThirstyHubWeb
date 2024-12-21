@@ -1,4 +1,4 @@
-﻿namespace ThirstyHubWeb.Models
+﻿namespace ThirstyHubWeb.Data.Models
 {
     public class Category
     {
@@ -7,6 +7,6 @@
         public string Description { get; set; }
 
         public List<Drink> Drinks { get; set; }
-        
+
     }
 }

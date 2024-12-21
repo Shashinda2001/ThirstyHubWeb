@@ -1,11 +1,11 @@
-﻿using ThirstyHubWeb.Models;
+﻿using ThirstyHubWeb.Data.Models;
 
-namespace ThirstyHubWeb.Interfaces
+namespace ThirstyHubWeb.Data.Interfaces
 {
     public interface IDrinkRepository
     {
-        IEnumerable<Drink> Drinks { get; set; }
-        IEnumerable<Drink> PerferreOrders { get; set; }
+        IEnumerable<Drink> Drinks { get;  }
+        IEnumerable<Drink> PreferredDrinks { get;  }
 
         Drink GetDrinkById(int drinkId);
 

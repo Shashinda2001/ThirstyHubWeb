@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ThirstyHubWeb.Models;
+using ThirstyHubWeb.Data.Models;
 
 namespace ThirstyHubWeb.Controllers
 {

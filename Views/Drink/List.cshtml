@@ -12,10 +12,27 @@ All Drink are show here
 
  
 @{
-    foreach (var drink in Model.Drinks){
-        <div>
-        <h4>Drink Name : @drink.Name</h4>
-        <p>Price : @drink.Price.ToString("c")</p>
-        </div>
-    }
+    <div class="row">
+        @foreach (var drink in Model.Drinks)
+        {
+            <div class="col-sm-4 col-lg-4 col-md-4 mb-4">
+                <div class="card shadow-sm border-light">
+                    <img src="@drink.ImageThumbnailUrl" class="card-img-top" alt="Drink Image" />
+                    
+                    <img src="@(!string.IsNullOrEmpty(drink.ImageThumbnailUrl) ? drink.ImageThumbnailUrl : "https://via.placeholder.com/150")"
+                         class="card-img-top" alt="@drink.Name" />
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">@drink.Name</h5>
+                            <span class="text-primary">@drink.Price.ToString("c")</span>
+                        </div>
+                        <p class="card-text">@drink.ShortDescription</p>
+                        <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    
 }

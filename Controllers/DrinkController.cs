@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ThirstyHubWeb.Data.Interfaces;
+using ThirstyHubWeb.ViewModels;
 
 namespace ThirstyHubWeb.Controllers
 {
@@ -20,8 +21,11 @@ namespace ThirstyHubWeb.Controllers
 
         public ViewResult List()
         {
-            var drinks = _drinkRepository.Drinks;
-            return View( drinks );
+            ViewBag.Name = "COOOOL!";
+            DrinkListViewModel vm = new DrinkListViewModel();
+            vm.Drinks = _drinkRepository.Drinks;
+            vm.CurrentCategory = "DrinkCategory";
+            return View(vm);
         }
     }
 }

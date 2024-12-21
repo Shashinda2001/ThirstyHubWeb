@@ -1,15 +1,19 @@
-﻿@using ThirstyHubWeb.Data.Models
-@model IEnumerable<Drink>
+﻿@using ThirstyHubWeb.ViewModels
+@model DrinkListViewModel
 
     <div>
         <h2>
+All Drink are show here
+        </h2>
 
+        <h2>
+            @Model.CurrentCategory
         </h2>
     </div>
 
  
 @{
-    foreach (var drink in Model){
+    foreach (var drink in Model.Drinks){
         <div>
         <h4>Drink Name : @drink.Name</h4>
         <p>Price : @drink.Price.ToString("c")</p>

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using ThirstyHubWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using ThirstyHubWeb.Data.Repositories;
+using ThirstyHubWeb.Data.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +29,12 @@ builder.Services.AddTransient<IDrinkRepository, DrinkRepository>();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dbInitializer = scope.ServiceProvider.GetRequiredService<DbInitializer>();
+    DbInitializer.Seed(app);
+}
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -46,5 +53,7 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+//DbInitializer.Seed(app);
 
 app.Run();
